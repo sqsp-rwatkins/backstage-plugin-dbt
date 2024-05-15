@@ -39,8 +39,9 @@ export async function createRouter(options: RouterOptions): Promise<express.Rout
   async function handleRequest(req: Request, res: Response, type: 'manifest' | 'catalog') {
     const { bucket, kind, name } = req.params;
     const bucketPath = req.query.bucketPath;
-    const filePath = bucketPath ? `${bucketPath}/${type}.json` : `${kind}/${name}/${type}.json`;
     const backend = config.getString('dbtdoc.backend')
+
+    const filePath = bucketPath ? `${bucketPath}/${type}.json` : `${kind}/${name}/${type}.json`;
     const fullPath = `${bucket}/${filePath}`;
 
     let storageProvider: StorageProvider;
