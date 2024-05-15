@@ -1,5 +1,5 @@
 {
-  "name": "@iiben_orgii/backstage-plugin-dbt",
+  "name": "@ronanwatkins/backstage-plugin-dbt",
   "version": "1.0.1-alpha.0",
   "main": "dist/index.esm.js",
   "types": "dist/index.d.ts",
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/IIBenII/backstage-plugin-dbt"
+    "url": "https://github.com/sqsp-rwatkins/backstage-plugin-dbt"
   },
   "scripts": {
     "start": "backstage-cli package start",
