@@ -34,7 +34,13 @@ export function createRouter(options: RouterOptions): express.Router {
 
   async function handleRequest(req: Request, res: Response, type: 'manifest' | 'catalog') {
     const { bucket, kind, name } = req.params;
-    const filePath = `${kind}/${name}/${type}.json`;
+    const bucketPath = req.query.bucketPath;
+    let filePath = '';
+    if (bucketPath) {
+      filePath = `${bucketPath}/${type}.json`
+    } else {
+      filePath = `${kind}/${name}/${type}.json`;
+    }
     const fullPath = `${bucket}/${filePath}`;
 
     try {
